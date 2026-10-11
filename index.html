@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yousef Hatem — AI Developer</title>
+<meta name="description" content="Portfolio of Yousef Hatem, AI Developer building machine learning models, LLM applications and intelligent products">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f1f4ef;--ink:#16261f;--muted:#5b6b63;--line:#c9d3cb;--accent:#3d5afe;--surface:rgba(255,255,255,.28)}
+@media (prefers-color-scheme:dark){:root{--bg:#101a15;--ink:#e8efe9;--muted:#93a39a;--line:#2c3b33;--accent:#8a9bff;--surface:rgba(20,29,24,.62)}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 "Instrument Sans",system-ui,sans-serif;min-height:100vh}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:28px 0 22px;font-weight:500}
+nav div{display:flex;gap:24px;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--muted);transition:color .2s ease}
+nav a:hover{color:var(--accent)}
+nav strong{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:1.1rem;letter-spacing:-.02em}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.05}
+.hero{padding:9vh 0 12vh}
+h1{font-size:clamp(3rem,10vw,6.5rem);font-weight:800;letter-spacing:-.03em}
+.hero p{max-width:54ch;margin-top:28px;font-size:1.3rem;color:var(--muted)}
+.btn{display:inline-block;margin-top:32px;padding:14px 26px;background:var(--accent);color:#fff;border-radius:999px;text-decoration:none;font-weight:500;box-shadow:0 12px 30px rgba(61,90,254,.22);transition:transform .2s ease, box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(61,90,254,.28)}
+@media (prefers-color-scheme:dark){.btn{color:#101a15}}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:2rem;font-weight:700;margin-bottom:28px}
+.about p{max-width:60ch;margin-bottom:16px}
+.project{display:grid;grid-template-columns:1fr auto;gap:8px 24px;padding:22px 0;border-bottom:1px solid var(--line);text-decoration:none;align-items:start;transition:transform .2s ease, border-color .2s ease}
+.project:first-of-type{border-top:1px solid var(--line)}
+.project:hover{transform:translateX(2px)}
+.project h3{font-size:1.5rem;font-weight:700}
+.project span{color:var(--muted)}
+.project .arrow{grid-row:1;grid-column:2;font-size:1.5rem;transition:transform .2s ease}
+.project:hover h3{color:var(--accent)}
+.project:hover .arrow{transform:translate(4px,-4px)}
+.skills{display:flex;flex-wrap:wrap;gap:10px}
+.skills li{list-style:none;padding:6px 16px;border:1px solid var(--line);border-radius:999px;background:var(--surface);transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease}
+.skills li:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 12px 24px rgba(61,90,254,.12);background:rgba(255,255,255,.42)}
+.contact{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.contact > a,
+.contact p a{font:700 1.15rem/1.2 "Bricolage Grotesque",system-ui,sans-serif;text-decoration:none;border-bottom:3px solid var(--accent);display:inline-block;transition:transform .2s ease, opacity .2s ease}
+.contact > a:hover,
+.contact p a:hover{transform:translateY(-1px);opacity:.9}
+.contact p{margin-top:0;display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+footer{padding:40px 0;color:var(--muted);font-size:.9rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media (max-width:620px){nav{padding-top:20px}.wrap{padding:0 18px}.nav div{gap:14px}.hero{padding:7vh 0 10vh}.hero p{font-size:1.15rem}.project{grid-template-columns:1fr}.project .arrow{grid-row:auto;grid-column:auto;justify-self:start;margin-top:-4px}.contact > a,.contact p a{font-size:1rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <strong>Yousef Hatem</strong>
+    <div><a href="#work" target="_blank" rel="noopener noreferrer">Work</a><a href="#about" target="_blank" rel="noopener noreferrer">About</a><a href="#contact" target="_blank" rel="noopener noreferrer">Contact</a></div>
+  </nav>
+
+  <header class="hero">
+    <h1>Hi, I'm Yousef Hatem</h1>
+    <p>AI Developer specializing in AI Agents, LLM-powered applications, and workflow automation using n8n. I build intelligent solutions that automate processes, connect APIs, and turn business needs into practical AI-powered systems.</p>
+    <a class="btn" href="#work" target="_self" rel="noopener noreferrer">See my work</a>
+  </header>
+
+  <section id="work">
+    <h2>Selected work</h2>
+    <a class="project" href="project-one.html" target="_self">
+      <h3>AI Chatbot Doctor Assistant</h3><b class="arrow">↗</b>
+      <span>Built an AI Doctor Assistant using n8n and OpenAI to analyze symptoms, provide preliminary medical guidance, and suggest appropriate medical specialists through automated conversations.</span>
+    </a>
+    <a class="project" href="project-two.html" target="_self">
+      <h3>Developing Custom AI Agents Using Python and APIs</h3><b class="arrow">↗</b>
+      <span>Developed custom AI agents using Python, LLMs, and APIs to understand user instructions, automate tasks, interact with external systems, and execute workflows efficiently with minimal manual intervention.</span>
+    </a>
+    <a class="project" href="project-three.html" target="_self">
+      <h3>AI-Powered E-Commerce Customer Support Chatbot</h3><b class="arrow">↗</b>
+      <span>Developed an AI-powered customer support chatbot for e-commerce stores using LLMs and n8n to handle customer inquiries, provide product information, assist with order-related questions, and automate support workflows, enhancing customer experience and reducing manual workload.</span>
+    </a>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About me</h2>
+    <p>AI Developer with hands-on experience in building conversational AI systems using Python, NLP, LLMs, Rasa, and n8n. Skilled in developing and deploying intelligent chatbots, designing AI-powered automation workflows, and integrating AI solutions with backend systems to deliver scalable and efficient applications.</p>
+    <h2 style="margin-top:40px">Skills</h2>
+    <ul class="skills" style="padding:0">
+      <li>AI Agents</li><li>n8n Automation</li><li>Chatbots</li><li>LLM Applications</li><li>Workflow Automation</li><li>Python</li><li>Prompt Engineering</li><li>API Integration</li><li>Automation Systems</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <a href="mailto:yousefhatem192006@gmail.com" target="_blank" rel="noopener noreferrer">yousefhatem192006@gmail.com</a>
+    <p><a href="https://github.com/YousefHatem18" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+    <a href="https://www.linkedin.com/in/yousef-hatem192006/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+  </section>
+
+  <footer>© <span id="y"></span> Yousef Hatem</footer>
+</div>
+<script>document.getElementById("y").textContent=new Date().getFullYear()</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce AI Chatbot | Yousef Hatem</title>
+  <meta name="description" content="AI-powered e-commerce support chatbot project built with LLMs and n8n to automate customer support and reduce manual workload.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#f1f4ef;--ink:#16261f;--muted:#5b6b63;--line:#c9d3cb;--accent:#3d5afe;--surface:rgba(255,255,255,.38);--soft:#eef8f3;--card:#ffffff;--shadow:0 20px 50px rgba(22,38,31,.08)}
+    @media (prefers-color-scheme:dark){:root{--bg:#101a15;--ink:#e8efe9;--muted:#93a39a;--line:#2c3b33;--accent:#8a9bff;--surface:rgba(20,29,24,.62);--soft:#112922;--card:#182820;--shadow:0 20px 50px rgba(0,0,0,.24)}}
+    *{box-sizing:border-box;margin:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--ink);font:400 1.05rem/1.7 "Instrument Sans",system-ui,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block;border-radius:20px}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:28px 0 18px;font-weight:600}
+    nav .left{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:1.15rem;letter-spacing:-.02em}
+    nav .right{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+    nav a{color:var(--muted)}
+    nav a:hover{color:var(--accent)}
+    .btn{display:inline-block;padding:14px 24px;border-radius:999px;background:var(--accent);color:#fff;font-weight:600;box-shadow:0 12px 30px rgba(61,90,254,.24);transition:transform .2s ease, box-shadow .2s ease}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(61,90,254,.28)}
+    .hero{padding:50px 0 30px}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center}
+    .eyebrow{display:inline-block;padding:7px 12px;border:1px solid var(--line);background:var(--surface);border-radius:999px;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.05;letter-spacing:-.03em}
+    h1{font-size:clamp(2.6rem,5vw,5rem);margin:18px 0 18px}
+    .lead{color:var(--muted);font-size:1.18rem;max-width:60ch}
+    .hero-card{aspect-ratio:17/10;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);background:var(--soft);overflow:hidden}
+    .hero-card img{width:100%;height:100%;object-fit:contain;object-position:center}
+    section{padding:36px 0}
+    .section-head{margin-bottom:20px}
+    .section-head h2{font-size:2rem;margin-bottom:10px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:var(--shadow)}
+    .card p{color:var(--muted);margin-top:12px}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .meta span{padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:.9rem}
+    .stack{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:18px;margin-top:18px}
+    .stack .small-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+    .stack h3{font-size:1.1rem;margin-bottom:8px}
+    .stack p{color:var(--muted);font-size:.96rem}
+    .example-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:20px}
+    .example-card{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
+    .example-visual{aspect-ratio:8/5;background-size:cover;background-position:center;border-bottom:1px solid var(--line);filter:saturate(1.08) contrast(1.04)}
+    .example-copy{padding:18px}
+    .example-card h3{margin:0 0 8px;font-size:1.25rem}
+    .example-card p{color:var(--muted)}
+    .back{padding:18px 0 48px}
+    @media (max-width:860px){.hero-grid,.grid-2,.stack,.example-grid{grid-template-columns:1fr}.nav .right{gap:12px}.wrap{padding:0 18px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="left" href="index.html">Yousef Hatem</a>
+      <div class="right">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">E-Commerce AI</span>
+          <h1>AI-Powered Customer Support Chatbot</h1>
+          <p class="lead">A conversational support assistant built for online stores to answer product questions, handle order issues, and automate repetitive customer service tasks.</p>
+          <div style="margin-top:24px"><a class="btn" href="index.html#work">Back to portfolio</a></div>
+        </div>
+        <div class="hero-card"><img src="AI Customer Support Chatbot.png" alt="AI-powered e-commerce customer support chatbot"></div>
+      </div>
+    </header>
+
+    <section>
+      <div class="section-head">
+        <h2>Project overview</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Problem</h3>
+          <p>E-commerce businesses often receive a high volume of repetitive questions about products, shipping, returns, and order details.</p>
+        </div>
+        <div class="card">
+          <h3>Solution</h3>
+          <p>I created an AI chatbot that understands product and support inquiries, answers accurately, and triggers workflows through n8n to reduce workload for human agents.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Key capabilities</h2>
+      </div>
+      <div class="stack">
+        <div class="small-card">
+          <h3>Product Q&A</h3>
+          <p>Customers can ask about features, availability, pricing, and recommendations in natural language.</p>
+        </div>
+        <div class="small-card">
+          <h3>Order Support</h3>
+          <p>The assistant helps with common questions related to delivery, returns, shipping status, and order status.</p>
+        </div>
+        <div class="small-card">
+          <h3>Workflow Automation</h3>
+          <p>n8n routes complex cases to the right team while the chatbot handles routine interactions automatically.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Example</h2>
+      </div>
+      <div class="example-grid">
+        <div class="example-card">
+          <div class="example-visual" style="background-image:linear-gradient(180deg,rgba(7,10,12,.08),rgba(7,10,12,.28)),url('AI E-Commerce Chatbot APP.png');"></div>
+          <div class="example-copy">
+            <h3>Customer conversation</h3>
+            <p>The bot responds naturally to product questions and simple support requests in real time.</p>
+          </div>
+        </div>
+        <div class="example-card">
+          <div class="example-visual" style="background-image:linear-gradient(180deg,rgba(7,10,12,.08),rgba(7,10,12,.28)),url('AI Customer Support Chatbot.png');"></div>
+          <div class="example-copy">
+            <h3>Support workflow</h3>
+            <p>When needed, n8n forwards more complex issues to a human team while keeping routine queries automated.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Result</h2>
+      </div>
+      <div class="card">
+        <p>The chatbot improved response speed, reduced repetitive support load for staff, and created a smoother customer experience while keeping the brand responsive around the clock.</p>
+        <div class="meta">
+          <span>AI Chatbot</span>
+          <span>n8n</span>
+          <span>Customer Support</span>
+          <span>E-Commerce</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="back"><a class="btn" href="index.html">← Back to home</a></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom AI Agents | Yousef Hatem</title>
+  <meta name="description" content="Custom AI agents project built with Python, LLMs, and APIs to automate tasks and interact with systems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#f1f4ef;--ink:#16261f;--muted:#5b6b63;--line:#c9d3cb;--accent:#3d5afe;--surface:rgba(255,255,255,.38);--soft:#edf3ff;--card:#ffffff;--shadow:0 20px 50px rgba(22,38,31,.08)}
+    @media (prefers-color-scheme:dark){:root{--bg:#101a15;--ink:#e8efe9;--muted:#93a39a;--line:#2c3b33;--accent:#8a9bff;--surface:rgba(20,29,24,.62);--soft:#122230;--card:#182820;--shadow:0 20px 50px rgba(0,0,0,.24)}}
+    *{box-sizing:border-box;margin:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--ink);font:400 1.05rem/1.7 "Instrument Sans",system-ui,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block;border-radius:20px}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:28px 0 18px;font-weight:600}
+    nav .left{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:1.15rem;letter-spacing:-.02em}
+    nav .right{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+    nav a{color:var(--muted)}
+    nav a:hover{color:var(--accent)}
+    .btn{display:inline-block;padding:14px 24px;border-radius:999px;background:var(--accent);color:#fff;font-weight:600;box-shadow:0 12px 30px rgba(61,90,254,.24);transition:transform .2s ease, box-shadow .2s ease}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(61,90,254,.28)}
+    .hero{padding:50px 0 30px}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center}
+    .eyebrow{display:inline-block;padding:7px 12px;border:1px solid var(--line);background:var(--surface);border-radius:999px;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.05;letter-spacing:-.03em}
+    h1{font-size:clamp(2.6rem,5vw,5rem);margin:18px 0 18px}
+    .lead{color:var(--muted);font-size:1.18rem;max-width:60ch}
+    .hero-card{aspect-ratio:17/10;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);background:var(--soft);overflow:hidden}
+    .hero-card img{width:100%;height:100%;object-fit:contain;object-position:center}
+    section{padding:36px 0}
+    .section-head{margin-bottom:20px}
+    .section-head h2{font-size:2rem;margin-bottom:10px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:var(--shadow)}
+    .card p{color:var(--muted);margin-top:12px}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .meta span{padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:.9rem}
+    .stack{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:18px;margin-top:18px}
+    .stack .small-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+    .stack h3{font-size:1.1rem;margin-bottom:8px}
+    .stack p{color:var(--muted);font-size:.96rem}
+    .example-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:20px}
+    .example-card{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
+    .example-visual{height:220px;background-size:cover;background-position:center;border-bottom:1px solid var(--line);filter:saturate(1.08) contrast(1.04)}
+    .example-copy{padding:18px}
+    .example-card h3{margin:0 0 8px;font-size:1.25rem}
+    .example-card p{color:var(--muted)}
+    .back{padding:18px 0 48px}
+    @media (max-width:860px){.hero-grid,.grid-2,.stack,.example-grid{grid-template-columns:1fr}.nav .right{gap:12px}.wrap{padding:0 18px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="left" href="index.html">Yousef Hatem</a>
+      <div class="right">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">AI Automation</span>
+          <h1>Custom AI Agents</h1>
+          <p class="lead">A Python-based agent system that interprets user intent, calls external APIs, and executes multi-step workflows with little manual intervention.</p>
+          <div style="margin-top:24px"><a class="btn" href="index.html#work">Back to portfolio</a></div>
+        </div>
+        <div class="hero-card"><img src="Custom Chatbots.png" alt="Custom AI agents connected to APIs and systems"></div>
+      </div>
+    </header>
+
+    <section>
+      <div class="section-head">
+        <h2>Project overview</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Problem</h3>
+          <p>Teams often need software to act on user requests, retrieve information from live systems, and trigger automations without needing a developer to do every step manually.</p>
+        </div>
+        <div class="card">
+          <h3>Solution</h3>
+          <p>I designed custom AI agents that parse instructions, call APIs, coordinate tool use, and perform repeatable workflow actions across different systems.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>What the agent does</h2>
+      </div>
+      <div class="stack">
+        <div class="small-card">
+          <h3>1. Understand</h3>
+          <p>The agent interprets the user request and decides which tool or workflow is relevant.</p>
+        </div>
+        <div class="small-card">
+          <h3>2. Act</h3>
+          <p>It connects to APIs, reads data, and runs logic to complete a task safely and consistently.</p>
+        </div>
+        <div class="small-card">
+          <h3>3. Deliver</h3>
+          <p>It returns the final result or triggers a business action without constant human supervision.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Example</h2>
+      </div>
+      <div class="example-grid">
+        <div class="example-card">
+          <div class="example-visual" style="background-image:linear-gradient(180deg,rgba(7,10,12,.08),rgba(7,10,12,.28)),url('APP of Custom Chatbot.png');"></div>
+          <div class="example-copy">
+            <h3>Intent handling</h3>
+            <p>The agent reads the task, decides on the right action, and picks the correct external tool.</p>
+          </div>
+        </div>
+        <div class="example-card">
+          <div class="example-visual" style="background-image:linear-gradient(180deg,rgba(7,10,12,.08),rgba(7,10,12,.28)),url('APP of Cutom Agent.png');"></div>
+          <div class="example-copy">
+            <h3>Automation execution</h3>
+            <p>Once the request is understood, the system connects to APIs and completes the workflow with minimal manual input.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Business value</h2>
+      </div>
+      <div class="card">
+        <p>This approach reduces manual effort, speeds up operational tasks, and makes it easier to automate internal workflows with a flexible AI-driven layer.</p>
+        <div class="meta">
+          <span>Python</span>
+          <span>LLMs</span>
+          <span>API Integration</span>
+          <span>Agent Workflows</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="back"><a class="btn" href="index.html">← Back to home</a></div>
+  </div>
+</body>
+</html>
